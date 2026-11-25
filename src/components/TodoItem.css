@@ -1,0 +1,51 @@
+.TodoItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.TodoItem input[type='checkbox']{
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: gray;
+}
+
+.TodoItem .content {
+  flex: 1;
+}
+
+.TodoItem .date {
+  font-size: 14px;
+  color: gray;
+}
+
+.btns-wrap {
+  display: flex;
+  gap: 10px;
+}
+
+.btns-wrap button {
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+}
+
+.updateBtn {
+  background-color: green;
+}
+
+.deleteBtn {
+  background-color: red;
+}
+
+.isDone .content,
+.isDone .date {
+  text-decoration: line-through;
+  color: gray;
+}
