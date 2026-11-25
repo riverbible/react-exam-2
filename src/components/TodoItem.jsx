@@ -9,7 +9,7 @@ const toInputDate = (time) => {
   return `${d.getFullYear()}-${mm}-${dd}`
 }
 
-const TodoItem = ({ id, isDone, content, date, onUpdate }) => {
+const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [editContent, setEditContent] = useState(content);
   const [editDate, setEditDate] = useState(date);
@@ -28,15 +28,19 @@ const TodoItem = ({ id, isDone, content, date, onUpdate }) => {
     setIsEdit(!isEdit)
   }
 
+  const onClickDelete = () => {
+    
+  }
+
   return (
-    <div className={`TodoItem${isDone?" isDone":""}`}>
+    <div className={`TodoItem${isDone ? " isDone" : ""}`}>
       <input type="checkbox" checked={isDone} onChange={onChangeCheck} />
       {isEdit ? (
         <>
           <input type="text"
             className='content'
             value={editContent}
-            onChange={(e)=>setEditContent(e.target.value)}/>
+            onChange={(e) => setEditContent(e.target.value)} />
           <input type="date"
             className='date'
             value={editDate}
@@ -50,7 +54,7 @@ const TodoItem = ({ id, isDone, content, date, onUpdate }) => {
       )}
       <div className="btns-wrap">
         <button className='updateBtn' onClick={onClickUpdate}>{isEdit ? '저장' : '수정'}</button>
-        <button className='deleteBtn'>삭제</button>
+        <button className='deleteBtn' onClick={onClickDelete}>삭제</button>
       </div>
     </div>
   )
