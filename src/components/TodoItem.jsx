@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import './TodoItem.css'
 
-const toInputDate = (time) => {
-  const d = new Date(time)
-  const mm = String(d.getMonth() + 1).padStart(2, '0');
-  const dd = String(d.getDate()).padStart(2, '0');
+// const toInputDate = (time) => {
+//   const d = new Date(time)
+//   const mm = String(d.getMonth() + 1).padStart(2, '0');
+//   const dd = String(d.getDate()).padStart(2, '0');
 
-  return `${d.getFullYear()}-${mm}-${dd}`
-}
+//   return `${d.getFullYear()}-${mm}-${dd}`
+// }
 
-const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
+const TodoItem = ({ id, isDone, content, count, onUpdate, onDelete }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [editContent, setEditContent] = useState(content);
-  const [editDate, setEditDate] = useState(date);
+  const [editCount, setEditCount] = useState(count);
 
   const onChangeCheck = () => onUpdate(id, { isDone: !isDone });
 
@@ -22,7 +22,7 @@ const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
 
       onUpdate(id, {
         content: editContent,
-        date: new Date(editDate).getTime()
+        count: editCount
       })
     }
     setIsEdit(!isEdit)
@@ -41,15 +41,15 @@ const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
             className='content'
             value={editContent}
             onChange={(e) => setEditContent(e.target.value)} />
-          <input type="date"
-            className='date'
-            value={editDate}
-            onChange={(e) => setEditDate(e.target.value)} />
+          <input type="number"
+            className='count'
+            value={editCount}
+            onChange={(e) => setEditCount(e.target.value)} />
         </>
       ) : (
         <>
           <div className="content">{content}</div>
-          <div className="date">{new Date(date).toLocaleDateString()}</div>
+          <div className="count">{count+"EA"}</div>
         </>
       )}
       <div className="btns-wrap">

@@ -23,7 +23,7 @@ const TodoList = ({ todos ,onUpdate, onDelete }) => {
 
   return (
     <div className='TodoList'>
-      <h4>Todo List </h4>
+      <h4>장보기 목록</h4>
       <input type="text"
         placeholder='검색어를 입력하세요'
         value={search}

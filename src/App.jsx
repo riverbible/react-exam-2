@@ -8,20 +8,20 @@ const mockData = [
   {
     id: 0,
     isDone: false,
-    content: 'React 공부하기',
-    date: new Date().getTime()
+    content: '계란 30개판',
+    count: 1
   },
   {
     id: 1,
     isDone: false,
-    content: '운동하기',
-    date: new Date().getTime()
+    content: '우유 1L',
+    count: 2
   },
   {
     id: 2,
     isDone: false,
-    content: '여행가기',
-    date: new Date().getTime()
+    content: '고구마 1kg',
+    count: 3
   },
 ]
 
@@ -32,10 +32,10 @@ function App() {
 
   const onCreate = (content) => {
     const newTodo = {
-      id: idRef.current + 1,
+      id: idRef.current++,
       isDone: false,
       content: content,
-      date: new Date().getTime()
+      count: 1
     }
 
     setTodos([newTodo, ...todos])
