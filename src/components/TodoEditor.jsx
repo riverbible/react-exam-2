@@ -9,7 +9,7 @@ const TodoEditor = ({ onCreate }) => {
     setContent(e.target.value)
   }
   const onKeyDown = (e) => {
-    if (e.keyCode == 123) {
+    if (e.keyCode === 13) {
       onSubmit()
     }
   }
