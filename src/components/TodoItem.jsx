@@ -29,7 +29,7 @@ const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
   }
 
   const onClickDelete = () => {
-    
+    onDelete(id);
   }
 
   return (
