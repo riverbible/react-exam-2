@@ -5,16 +5,37 @@
 
 .Editor input {
   flex: 1;
-  padding: 15px;
-  border: 1px solid gray;
-  border-radius: 5px;
+  padding: 14px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 15px;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.Editor input:focus {
+  outline: none;
+  border-color: #10b981;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
 .Editor button {
   cursor: pointer;
-  width: 80px;
+  width: 76px;
   border: none;
-  background-color: rgb(34, 147, 255);
-  color: #fff;
-  border-radius: 5px;
+  background-color: #10b981;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.Editor button:hover {
+  background-color: #059669;
+}
+
+.Editor button:active {
+  transform: scale(0.96);
 }

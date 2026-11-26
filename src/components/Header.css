@@ -1,3 +1,14 @@
+.Header h3 {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
 .Header h1 {
-  color: rgb(37, 147, 255);
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #10b981; /* 신선한 민트 그린 포인트 */
+  letter-spacing: -0.5px;
 }

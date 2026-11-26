@@ -1,0 +1,15 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #f3f5f8; /* 부드러운 쿨그레이 배경 */
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+}

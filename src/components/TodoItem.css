@@ -1,51 +1,112 @@
 .TodoItem {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgb(240, 240, 240);
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: #ffffff;
+  border: 1px solid #eef0f3;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
 }
 
-.TodoItem input[type='checkbox']{
+.TodoItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.TodoItem input[type='checkbox'] {
   cursor: pointer;
   width: 18px;
   height: 18px;
-  accent-color: gray;
+  accent-color: #10b981;
+  flex-shrink: 0;
 }
 
-.TodoItem .content {
+/* 일반 모드 텍스트 */
+.TodoItem div.content {
   flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2937;
+  word-break: break-all;
 }
 
-.TodoItem .date {
+.TodoItem div.count {
+  font-size: 13px;
+  font-weight: 600;
+  color: #059669;
+  background-color: #ecfdf5;
+  padding: 4px 9px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* 수정(isEdit) 모드 인풋 스타일 */
+.TodoItem input.content {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 10px;
+  border: 1.5px solid #10b981;
+  border-radius: 8px;
   font-size: 14px;
-  color: gray;
+  outline: none;
 }
 
+.TodoItem input.count {
+  width: 56px;
+  padding: 6px 8px;
+  border: 1.5px solid #10b981;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+}
+
+/* 수정 & 삭제 버튼 */
 .btns-wrap {
   display: flex;
-  gap: 10px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .btns-wrap button {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
   border: none;
-  border-radius: 5px;
-  padding: 5px;
-  color: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  transition: opacity 0.2s ease;
+}
+
+.btns-wrap button:hover {
+  opacity: 0.8;
 }
 
 .updateBtn {
-  background-color: green;
+  background-color: #e0f2fe;
+  color: #0284c7;
 }
 
 .deleteBtn {
-  background-color: red;
+  background-color: #fee2e2;
+  color: #dc2626;
 }
 
-.isDone .content,
-.isDone .date {
+/* 완료 체크(.isDone) 시 스타일 */
+.TodoItem.isDone {
+  background-color: #f9fafb;
+  border-color: #f3f4f6;
+}
+
+.isDone div.content {
   text-decoration: line-through;
-  color: gray;
+  color: #9ca3af;
+}
+
+.isDone div.count {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  text-decoration: line-through;
 }
